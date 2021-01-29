@@ -1,0 +1,2 @@
+vendor/bin/phpstan analyse -l 6 src 
+
