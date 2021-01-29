@@ -40,8 +40,8 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $user->setIndexWeight($weight / ($height * $height));
             $index_weight = $user->getIndexWeight();
-            $weight_1 = '2 degree - lack of weight';
-            $weight_2 = '1 degree - lack of weight';
+            $weight_1 = '2st degree - lack of weight';
+            $weight_2 = '1st degree - lack of weight';
             $weight_3 = 'normal weight';
             $weight_4 = 'excess weight';
             $weight_5 = '1st degree obesity';
