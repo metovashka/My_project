@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Men index{% endblock %}
+
+{% block body %}
+    <h1>Men index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Weight</th>
+                <th>Height</th>
+                <th>Index_weight</th>
+                <th>Result</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for man in mens %}
+            <tr>
+                <td>{{ man.id }}</td>
+                <td>{{ man.name }}</td>
+                <td>{{ man.weight }}</td>
+                <td>{{ man.height }}</td>
+                <td>{{ man.indexWeight }}</td>
+                <td>{{ man.result }}</td>
+                <td>
+                    <a href="{{ path('men_show', {'id': man.id}) }}">show</a>
+                    <a href="{{ path('men_edit', {'id': man.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('men_new') }}">Create new</a>
+{% endblock %}
