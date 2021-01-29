@@ -36,7 +36,6 @@ class UserController extends AbstractController
         $weight = $user->getWeight();
         $height = $user->getHeight();
 
-
         if ($form->isSubmitted() && $form->isValid()) {
             $user->setIndexWeight($weight / ($height * $height));
             $index_weight = $user->getIndexWeight();
@@ -50,15 +49,15 @@ class UserController extends AbstractController
 
             if ($index_weight < 18.0) {
                 $user->setResult($weight_1);
-            } else if ($index_weight < 20.0) {
+            } elseif ($index_weight < 20.0) {
                 $user->setResult($weight_2);
-            } else if ($index_weight < 25.0) {
+            } elseif ($index_weight < 25.0) {
                 $user->setResult($weight_3);
-            } else if ($index_weight < 27.0) {
+            } elseif ($index_weight < 27.0) {
                 $user->setResult($weight_4);
-            } else if ($index_weight < 30.0) {
+            } elseif ($index_weight < 30.0) {
                 $user->setResult($weight_5);
-            } else if ($index_weight < 35.0) {
+            } elseif ($index_weight < 35.0) {
                 $user->setResult($weight_6);
             } else {
                 $user->setResult($weight_7);

@@ -20,9 +20,11 @@ class PetController extends AbstractController
      */
     public function index(PetRepository $petRepository): Response
     {
-        return $this->render('pet/index.html.twig', [
+        return $this->render(
+            'pet/index.html.twig', [
             'pets' => $petRepository->findAll(),
-        ]);
+            ]
+        );
     }
 
     /**
@@ -42,10 +44,12 @@ class PetController extends AbstractController
             return $this->redirectToRoute('pet_index');
         }
 
-        return $this->render('pet/new.html.twig', [
+        return $this->render(
+            'pet/new.html.twig', [
             'pet' => $pet,
             'form' => $form->createView(),
-        ]);
+            ]
+        );
     }
 
     /**
@@ -53,9 +57,11 @@ class PetController extends AbstractController
      */
     public function show(Pet $pet): Response
     {
-        return $this->render('pet/show.html.twig', [
+        return $this->render(
+            'pet/show.html.twig', [
             'pet' => $pet,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -72,10 +78,12 @@ class PetController extends AbstractController
             return $this->redirectToRoute('pet_index');
         }
 
-        return $this->render('pet/edit.html.twig', [
+        return $this->render(
+            'pet/edit.html.twig', [
             'pet' => $pet,
             'form' => $form->createView(),
-        ]);
+            ]
+        );
     }
 
     /**

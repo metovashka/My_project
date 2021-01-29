@@ -20,9 +20,11 @@ class RewiewsController extends AbstractController
      */
     public function index(RewiewsRepository $rewiewsRepository): Response
     {
-        return $this->render('rewiews/index.html.twig', [
+        return $this->render(
+            'rewiews/index.html.twig', [
             'rewiews' => $rewiewsRepository->findAll(),
-        ]);
+            ]
+        );
     }
 
     /**
@@ -42,10 +44,12 @@ class RewiewsController extends AbstractController
             return $this->redirectToRoute('rewiews_index');
         }
 
-        return $this->render('rewiews/new.html.twig', [
+        return $this->render(
+            'rewiews/new.html.twig', [
             'rewiew' => $rewiew,
             'form' => $form->createView(),
-        ]);
+            ]
+        );
     }
 
     /**
@@ -53,9 +57,11 @@ class RewiewsController extends AbstractController
      */
     public function show(Rewiews $rewiew): Response
     {
-        return $this->render('rewiews/show.html.twig', [
+        return $this->render(
+            'rewiews/show.html.twig', [
             'rewiew' => $rewiew,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -72,10 +78,12 @@ class RewiewsController extends AbstractController
             return $this->redirectToRoute('rewiews_index');
         }
 
-        return $this->render('rewiews/edit.html.twig', [
+        return $this->render(
+            'rewiews/edit.html.twig', [
             'rewiew' => $rewiew,
             'form' => $form->createView(),
-        ]);
+            ]
+        );
     }
 
     /**

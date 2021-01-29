@@ -15,14 +15,15 @@ class PetType extends AbstractType
             ->add('name')
             ->add('weight')
             ->add('Age')
-            ->add('owner')
-        ;
+            ->add('owner');
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults([
+        $resolver->setDefaults(
+            [
             'data_class' => Pet::class,
-        ]);
+            ]
+        );
     }
 }

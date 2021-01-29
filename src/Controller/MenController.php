@@ -20,9 +20,11 @@ class MenController extends AbstractController
      */
     public function index(MenRepository $menRepository): Response
     {
-        return $this->render('men/index.html.twig', [
+        return $this->render(
+            'men/index.html.twig', [
             'mens' => $menRepository->findAll(),
-        ]);
+            ]
+        );
     }
 
     /**
@@ -42,10 +44,12 @@ class MenController extends AbstractController
             return $this->redirectToRoute('men_index');
         }
 
-        return $this->render('men/new.html.twig', [
+        return $this->render(
+            'men/new.html.twig', [
             'man' => $man,
             'form' => $form->createView(),
-        ]);
+            ]
+        );
     }
 
     /**
@@ -53,9 +57,11 @@ class MenController extends AbstractController
      */
     public function show(Men $man): Response
     {
-        return $this->render('men/show.html.twig', [
+        return $this->render(
+            'men/show.html.twig', [
             'man' => $man,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -72,10 +78,12 @@ class MenController extends AbstractController
             return $this->redirectToRoute('men_index');
         }
 
-        return $this->render('men/edit.html.twig', [
+        return $this->render(
+            'men/edit.html.twig', [
             'man' => $man,
             'form' => $form->createView(),
-        ]);
+            ]
+        );
     }
 
     /**

@@ -14,14 +14,15 @@ class OwnerType extends AbstractType
         $builder
             ->add('name')
             ->add('pet')
-            ->add('money')
-        ;
+            ->add('money');
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults([
+        $resolver->setDefaults(
+            [
             'data_class' => Owner::class,
-        ]);
+            ]
+        );
     }
 }

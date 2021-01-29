@@ -14,14 +14,15 @@ class MenType extends AbstractType
         $builder
             ->add('name')
             ->add('weight')
-            ->add('height')
-        ;
+            ->add('height');
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults([
+        $resolver->setDefaults(
+            [
             'data_class' => Men::class,
-        ]);
+            ]
+        );
     }
 }

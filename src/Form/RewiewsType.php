@@ -15,14 +15,15 @@ class RewiewsType extends AbstractType
             ->add('owner')
             ->add('Pet')
             ->add('text')
-            ->add('data')
-        ;
+            ->add('data');
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults([
+        $resolver->setDefaults(
+            [
             'data_class' => Rewiews::class,
-        ]);
+            ]
+        );
     }
 }
